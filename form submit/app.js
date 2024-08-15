@@ -1,3 +1,4 @@
+
 document.getElementById('userForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -8,7 +9,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     displayResult(name, email, phone);
 
     document.getElementById('userForm').reset();
-    document.getElementById('editContainer').style.display = 'block';
+    document.getElementById('userContainer').style.display = 'none'; // Hide the user form
+    document.getElementById('resultContainer').style.display = 'block'; // Show the result page
 });
 
 document.getElementById('editForm').addEventListener('submit', function(event) {
@@ -19,6 +21,9 @@ document.getElementById('editForm').addEventListener('submit', function(event) {
     const phone = document.getElementById('editPhone').value;
 
     displayResult(name, email, phone);
+
+    document.getElementById('editContainer').style.display = 'none'; // Hide the edit form
+    document.getElementById('resultContainer').style.display = 'block'; // Show the result page
 });
 
 document.getElementById('editButton').addEventListener('click', function() {
@@ -30,15 +35,12 @@ document.getElementById('editButton').addEventListener('click', function() {
     document.getElementById('editEmail').value = email;
     document.getElementById('editPhone').value = phone;
 
-    document.getElementById('editContainer').style.display = 'block';
+    document.getElementById('resultContainer').style.display = 'none'; // Hide the result page
+    document.getElementById('editContainer').style.display = 'block'; // Show the edit form
 });
 
 function displayResult(name, email, phone) {
     document.getElementById('resultName').textContent = `Name: ${name}`;
     document.getElementById('resultEmail').textContent = `Email: ${email}`;
     document.getElementById('resultPhone').textContent = `Phone: ${phone}`;
-
-    document.getElementById('resultContainer').style.display = 'block';
-    document.getElementById('editContainer').style.display = 'none';
 }
-

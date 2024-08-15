@@ -7,46 +7,33 @@
     <link rel="stylesheet" href="form submit/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>User Information Form</h2>
-        <form id="userForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <button type="submit">Save</button>
-        </form>
-        <div id="message"></div>
-    </div>
+<div id="userContainer">
+    <h2>User Information Form</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <button type="submit">Save</button>
+    </form>
+</div>
 
-    <div class="container" id="editContainer" style="display: none;">
-        <h2>Edit User Information</h2>
-        <form id="editForm">
-            <label for="editName">Name:</label>
-            <input type="text" id="editName" name="name" required>
-            
-            <label for="editEmail">Email:</label>
-            <input type="email" id="editEmail" name="email" required>
-            
-            <label for="editPhone">Phone:</label>
-            <input type="tel" id="editPhone" name="phone" required>
-            
-            <button type="submit">Update</button>
-        </form>
-    </div>
+<div id="resultContainer" style="display: none;">
+    <h2>Saved User Information and you can update your information</h2>
+    <p id="resultName"></p>
+    <p id="resultEmail"></p>
+    <p id="resultPhone"></p>
+    <button id="editButton">Edit</button>
+</div>
 
-    <div class="container" id="resultContainer" style="display: none;">
-        <h2>Saved User Information</h2>
-        <p id="resultName"></p>
-        <p id="resultEmail"></p>
-        <p id="resultPhone"></p>
-        <button id="editButton">Edit</button>
-    </div>
+<div id="editContainer" style="display: none;">
+    <h2>Update here</h2>
+    <form id="editForm">
+        <input type="text" id="editName" placeholder="Name" required>
+        <input type="email" id="editEmail" placeholder="Email" required>
+        <input type="tel" id="editPhone" placeholder="Phone" required>
+        <button type="submit">Update</button>
+    </form>
+</div>
     <script src="form submit/app.js"></script>
 </body>
 </html>
